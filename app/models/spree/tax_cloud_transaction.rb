@@ -32,7 +32,9 @@ module Spree
           end
           response_cart_items = Array.wrap response.body[:lookup_response][:lookup_result][:cart_items_response][:cart_item_response]
           response_cart_items.each do |response_cart_item|
-            cart_item = cart_items.find_by_index(response_cart_item[:cart_item_index].to_i)
+            cart_item = cart_items.detect do |ci|
+              ci.index == response_cart_item[:cart_item_index].to_i
+            end
             cart_item.update_attribute(:amount, response_cart_item[:tax_amount].to_f)
           end
         end
