@@ -17,6 +17,8 @@ Spree::Order.class_eval do
   end
 
   def lookup_tax_cloud
+    return unless ship_address.present?
+
     if tax_cloud_transaction.nil?
       create_tax_cloud_transaction
     end
