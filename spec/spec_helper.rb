@@ -8,6 +8,7 @@ require 'database_cleaner'
 require 'factory_girl'
 FactoryGirl.find_definitions
 require 'ffaker'
+require 'vcr'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -20,6 +21,12 @@ require 'spree/testing_support/authorization_helpers'
 require 'spree/testing_support/preferences'
 require 'spree/testing_support/flash'
 require 'spree/testing_support/url_helpers'
+
+VCR.configure do |c|
+  c.cassette_library_dir = "spec/cassettes"
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+end
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods

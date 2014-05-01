@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Spree::LineItem do
-  describe "#update_order_tax" do
-    let(:order) { create :order, state: state, ship_address: create(:address) }
-    let(:li) { create :line_item, order: order }
+  describe "#update_order_tax", vcr: true  do
+    let(:order) { create :order, state: state, ship_address: create(:address, zipcode: "35004") }
+    let!(:li) { create :line_item, order: order, variant: create(:variant, sku: "12345") }
 
     subject { li.update_order_tax }
 
@@ -18,7 +18,7 @@ describe Spree::LineItem do
     context "when the order is not 'tax_cloud_eligible'" do
       let(:state) { "complete" }
       it "tells the order to lookup the tax cloud" do
-        expect_any_instance_of(Spree::Order).to receive(:lookup_tax_cloud).exactly(2).times
+        expect_any_instance_of(Spree::Order).to receive(:lookup_tax_cloud).once
         subject
       end
     end
