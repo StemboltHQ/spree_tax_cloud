@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Checkout', js: true do
+describe 'Checkout', js: true, vcr: true do
 
   let!(:country) { create(:country, :name => "United States of America",:states_required => true) }
   let!(:state) { create(:state, :name => "Alabama", :country => country) }

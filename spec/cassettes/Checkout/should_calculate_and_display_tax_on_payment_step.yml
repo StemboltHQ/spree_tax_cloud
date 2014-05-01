@@ -29,7 +29,7 @@ http_interactions:
       X-Powered-By:
       - TaxCloud
       Date:
-      - Thu, 01 May 2014 21:19:00 GMT
+      - Thu, 01 May 2014 21:52:43 GMT
       Content-Length:
       - '53946'
     body:
@@ -728,7 +728,7 @@ http_interactions:
         \     <http:address location=\"https://api.taxcloud.net/1.0/TaxCloud.asmx\"
         />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
     http_version: 
-  recorded_at: Thu, 01 May 2014 21:18:55 GMT
+  recorded_at: Thu, 01 May 2014 21:52:39 GMT
 - request:
     method: post
     uri: https://api.taxcloud.net/1.0/TaxCloud.asmx
@@ -737,9 +737,9 @@ http_interactions:
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://taxcloud.net"
         xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Lookup><ins0:apiLoginID>395D0F00</ins0:apiLoginID><ins0:apiKey>E191A9C3-75AD-49A5-917E-171E0C9CD396</ins0:apiKey><tns:uspsUserID
-        xsi:nil="true"/><ins0:customerID>1</ins0:customerID><ins0:cartID>R722457213</ins0:cartID><ins0:cartItems><ins0:CartItem><tns:Index>1</tns:Index><tns:TIC>0</tns:TIC><tns:ItemID>12345</tns:ItemID><tns:Price>10.0</tns:Price><tns:Qty>1</tns:Qty></ins0:CartItem><ins0:CartItem><tns:Index>2</tns:Index><tns:TIC>11010</tns:TIC><tns:ItemID>SHIPPING</tns:ItemID><tns:Price>0.0</tns:Price><tns:Qty>1</tns:Qty></ins0:CartItem></ins0:cartItems><ins0:origin><ins0:Address1>1600
-        Pennsylvania Ave NW</ins0:Address1><ins0:Address2 xsi:nil="true"/><ins0:City>Washington</ins0:City><ins0:State>AL</ins0:State><ins0:Zip5>20500</ins0:Zip5></ins0:origin><ins0:destination><ins0:Address1>10
-        Lovely Street</ins0:Address1><ins0:Address2>Northwest</ins0:Address2><ins0:City>Herndon</ins0:City><ins0:State>AL</ins0:State><ins0:Zip5>35004</ins0:Zip5><ins0:Zip4
+        xsi:nil="true"/><ins0:customerID>R176358312</ins0:customerID><ins0:cartID>R176358312</ins0:cartID><ins0:cartItems><ins0:CartItem><tns:Index>1</tns:Index><tns:TIC>0</tns:TIC><tns:ItemID>ABC</tns:ItemID><tns:Price>19.99</tns:Price><tns:Qty>1</tns:Qty></ins0:CartItem><ins0:CartItem><tns:Index>2</tns:Index><tns:TIC>11010</tns:TIC><tns:ItemID>SHIPPING</tns:ItemID><tns:Price>0.0</tns:Price><tns:Qty>1</tns:Qty></ins0:CartItem></ins0:cartItems><ins0:origin><ins0:Address1>2301
+        Coliseum Pkwy</ins0:Address1><ins0:Address2 xsi:nil="true"/><ins0:City>Montgomery</ins0:City><ins0:State>AL</ins0:State><ins0:Zip5>36110</ins0:Zip5></ins0:origin><ins0:destination><ins0:Address1>143
+        Swan Street</ins0:Address1><ins0:Address2></ins0:Address2><ins0:City>Montgomery</ins0:City><ins0:State>AL</ins0:State><ins0:Zip5>36110</ins0:Zip5><ins0:Zip4
         xsi:nil="true"/></ins0:destination></ins0:Lookup></env:Body></env:Envelope>
     headers:
       Soapaction:
@@ -747,7 +747,7 @@ http_interactions:
       Content-Type:
       - text/xml;charset=UTF-8
       Content-Length:
-      - '1324'
+      - '1319'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -770,7 +770,7 @@ http_interactions:
       X-Powered-By:
       - TaxCloud
       Date:
-      - Thu, 01 May 2014 21:19:02 GMT
+      - Thu, 01 May 2014 21:52:45 GMT
       Content-Length:
       - '631'
     body:
@@ -778,7 +778,7 @@ http_interactions:
       string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><LookupResponse
         xmlns="http://taxcloud.net"><LookupResult><ResponseType>OK</ResponseType><Messages
-        /><CartID>R722457213</CartID><CartItemsResponse><CartItemResponse><CartItemIndex>1</CartItemIndex><TaxAmount>0</TaxAmount></CartItemResponse><CartItemResponse><CartItemIndex>2</CartItemIndex><TaxAmount>0</TaxAmount></CartItemResponse></CartItemsResponse></LookupResult></LookupResponse></soap:Body></soap:Envelope>
+        /><CartID>R176358312</CartID><CartItemsResponse><CartItemResponse><CartItemIndex>1</CartItemIndex><TaxAmount>0</TaxAmount></CartItemResponse><CartItemResponse><CartItemIndex>2</CartItemIndex><TaxAmount>0</TaxAmount></CartItemResponse></CartItemsResponse></LookupResult></LookupResponse></soap:Body></soap:Envelope>
     http_version: 
-  recorded_at: Thu, 01 May 2014 21:18:56 GMT
+  recorded_at: Thu, 01 May 2014 21:52:40 GMT
 recorded_with: VCR 2.9.0
