@@ -1,14 +1,19 @@
 Spree::Order.class_eval do
-
   has_one :tax_cloud_transaction
 
-  after_update :update_tax
+  Spree::Order::TAX_CLOUD_EXEMPT_STATES = ["cart", "address"]
+
+  after_update :update_tax, if: :tax_cloud_eligible?
 
   self.state_machine.after_transition :to => :payment, :do => :lookup_tax_cloud, :if => :tax_cloud_eligible?
   self.state_machine.after_transition :to => :complete, :do => :capture_tax_cloud, :if => :tax_cloud_eligible?
 
   def tax_cloud_eligible?
-    ship_address.try(:state_id?)
+    ship_address.try(:valid?) && !in_tax_cloud_exempt_state?
+  end
+
+  def in_tax_cloud_exempt_state?
+    self.class::TAX_CLOUD_EXEMPT_STATES.include? self.state
   end
 
   def update_tax
