@@ -6,9 +6,17 @@ describe Spree::Order do
     subject { order.in_tax_cloud_exempt_state? }
 
     context "when the order is in an exempt state" do
-      let(:state) { "address" }
+      context "when the order is in the address state" do
+        let(:state) { "address" }
 
-      it { should be_true }
+        it { should be_true }
+      end
+
+      context "when the order is in the cart state" do
+        let(:state) { "cart" }
+
+        it { should be_true }
+      end
     end
 
     context "when the order is not in an exempt state" do
