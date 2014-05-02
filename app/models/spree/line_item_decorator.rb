@@ -3,6 +3,8 @@ Spree::LineItem.class_eval do
   after_destroy :update_order_tax
 
   def update_order_tax
-    self.order.lookup_tax_cloud
+    if self.order.tax_cloud_eligible?
+      self.order.lookup_tax_cloud
+    end
   end
 end
