@@ -38,9 +38,11 @@ RSpec.configure do |config|
     Spree::Config[:taxcloud_usps_user_id] = '000FEDTA0000'
     Spree::Config[:taxcloud_default_product_tic] = '00000'
     Spree::Config[:taxcloud_shipping_tic] = '11010'
+
+    Spree::TaxCloud.update_config
   end
 
-  config.before :each do
+  config.before :each do |example|
     DatabaseCleaner.strategy = RSpec.current_example.metadata[:js] ? :truncation : :transaction
     DatabaseCleaner.start
   end
@@ -51,6 +53,7 @@ RSpec.configure do |config|
 
   config.color = true
   config.use_transactional_fixtures = false
+  config.treat_symbols_as_metadata_keys_with_true_values = true
   config.infer_base_class_for_anonymous_controllers = false
   config.infer_spec_type_from_file_location!
 end

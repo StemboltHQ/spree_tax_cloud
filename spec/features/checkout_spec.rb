@@ -76,8 +76,8 @@ describe 'Checkout', js: true do
     click_button "Save and Continue"
 
     click_button "Save and Continue"
-
-    click_on "Save and Continue"
+    click_button "Save and Continue"
+    click_button "Place Order"
     expect(current_path).to match(spree.order_path(Spree::Order.last))
   end
 
@@ -114,6 +114,7 @@ describe 'Checkout', js: true do
 
     click_button "Save and Continue"
     click_button "Save and Continue"
+    click_button "Place Order"
 
     expect(current_path).to match(spree.order_path(Spree::Order.last))
     expect(page).not_to have_content(/Address Verification Failed/i)
@@ -134,7 +135,7 @@ describe 'Checkout', js: true do
     # can still be passed to Lookup. The only error that should prevent an order from processing
     # is when the USPSID used is not valid, or a customer provided zip code does not exist
     # within the customer provided state (discussed later in Test Case 7, Handling Errors).
-    page.should have_content(/Sales Tax \$0.94/i)
+    page.should have_content(/Sales Tax \$0.95/i)
   end
 
   # TODO: This spec will fail until address verification is implemented in Spree::TaxCloud
@@ -168,6 +169,7 @@ describe 'Checkout', js: true do
     page.should have_content(/Order Total: \$20/i)
 
     click_on "Save and Continue"
+    click_on "Place Order"
 
     expect(current_path).to match(spree.order_path(Spree::Order.last))
     page.should_not have_content(/Sales Tax/i)
@@ -198,6 +200,7 @@ describe 'Checkout', js: true do
     # but rather is rounded per-line-item, then summed.
 
     click_on "Save and Continue"
+    click_on "Place Order"
 
     expect(current_path).to match(spree.order_path(Spree::Order.last))
     page.should have_content(/Sales Tax \$1.52/i)
@@ -220,6 +223,7 @@ describe 'Checkout', js: true do
     page.should have_content(/Order Total: \$20.84/i)
 
     click_on "Save and Continue"
+    click_on "Place Order"
 
     expect(current_path).to match(spree.order_path(Spree::Order.last))
     page.should have_content(/Sales Tax \$0.84/i)
@@ -253,6 +257,7 @@ describe 'Checkout', js: true do
     page.should have_content(/Order Total: \$21.60/i)
 
     click_on "Save and Continue"
+    click_on "Place Order"
 
     expect(current_path).to match(spree.order_path(Spree::Order.last))
     page.should have_content(/Sales Tax \$1.60/i)
