@@ -6,9 +6,9 @@ Gem::Specification.new do |s|
 
   s.name        = 'spree_tax_cloud'
   s.version     =  version
-  s.authors     = ["Jerrold Thompson"]
-  s.email       = 'jet@whidbey.com'
-  s.homepage    = 'https://github.com/spree-contrib/spree_tax_cloud.git'
+  s.authors     = ["Michael de Silva"]
+  s.email       = 'mike@stembolt.com'
+  s.homepage    = 'http://www.stembolt.com'
   s.summary     = 'Spree extension providing Tax Cloud services'
   s.description = 'Spree extension for providing Tax Cloud services in USA.'
 
