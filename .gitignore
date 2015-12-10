@@ -17,7 +17,7 @@
 *.swo
 *.hold
 Gemfile.lock
-spec/dummy
+spec/dummy/tmp
 tags
 *.orig
 .sass-cache
