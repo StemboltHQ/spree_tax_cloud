@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.3'
 
-  s.add_dependency 'solidus', '~> 1.0.2'
+  s.add_dependency 'solidus', '~> 1.2.1'
 
   s.add_runtime_dependency 'savon', '~> 2.5.1'
   s.add_runtime_dependency 'tax_cloud', '~> 0.3.0'
@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'ffaker'
   s.add_development_dependency 'generator_spec'
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'sass-rails',         '~> 4.0.2'
+  s.add_development_dependency 'sass-rails'
   s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'pry'
